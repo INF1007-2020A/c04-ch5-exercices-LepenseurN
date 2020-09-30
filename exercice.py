@@ -61,17 +61,10 @@ def verify_ages(groups: List[List[int]]) -> List[bool]:
     for sous_liste in groups :
         if 25 in sous_liste :
             list_reponse.append(True)
-        else :
-            if len(sous_liste) > 10 or len(sous_liste) <= 3 :
-                list_reponse.append(False)
-                continue 
-            for elt in sous_liste :
-                if elt < 18 :
+        elif len(sous_liste) > 10 or len(sous_liste) <= 3 :
+            list_reponse.append(False)
+        elif ( min(sous_liste) < 18 ) or (50 in sous_liste and max(sous_liste) > 70 ) :
                     list_reponse.append(False)
-                    break
-                if 50 in sous_liste and elt > 70 :
-                    list_reponse.append(False)
-                    break
     return list_reponse
 
 
