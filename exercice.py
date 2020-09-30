@@ -55,7 +55,6 @@ def use_continue() -> None:
             print(i)
 
 
-
 def verify_ages(groups: List[List[int]]) -> List[bool]:
     list_reponse = list()
     for sous_liste in groups :
@@ -64,7 +63,9 @@ def verify_ages(groups: List[List[int]]) -> List[bool]:
         elif len(sous_liste) > 10 or len(sous_liste) <= 3 :
             list_reponse.append(False)
         elif ( min(sous_liste) < 18 ) or (50 in sous_liste and max(sous_liste) > 70 ) :
-                    list_reponse.append(False)
+            list_reponse.append(False)
+        else:
+            list_reponse.append(False)
     return list_reponse
 
 
