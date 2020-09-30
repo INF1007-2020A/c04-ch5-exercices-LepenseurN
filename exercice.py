@@ -23,8 +23,21 @@ def use_prefixes() -> List[str]:
 
 
 def prime_integer_summation() -> int:
+    i = 3
+    k = 7
+    som = 10                     #som est initialisée avec la somme des 03 premiers entiers premiers
+    while i < 100 :
+        is_prime = True
+        for j in range (2 , (k // 2) + 1) :
+            if k % j == 0 :
+                is_prime = False
+        if is_prime :
+            i +=1
+            som += k
+        k += 2
+        
 
-    return 100*(2+101)/2
+    return som
 
 
 def factorial(number: int) -> int:
